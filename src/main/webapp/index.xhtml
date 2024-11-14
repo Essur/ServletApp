@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xml:lang="en">
+<f:view>
+    <h:head>
+        <title>Series Calculation</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>Series Calculation</h2>
+            <p:panelGrid columns="2">
+                <p:outputLabel for="x" value="Enter x:" />
+                <p:inputText id="x" value="#{seriesBean.x}" />
+
+                <p:outputLabel for="n" value="Enter n:" />
+                <p:inputText id="n" value="#{seriesBean.n}" />
+
+                <p:outputLabel for="e" value="Enter epsilon (e):" />
+                <p:inputText id="e" value="#{seriesBean.e}" />
+            </p:panelGrid>
+            <p:commandButton value="Calculate Series" action="series-servlet" ajax="false"/>
+            <br/>
+            <p:commandLink value="Go to Tabulation Page" action="tabulation.xhtml"/>
+        </h:form>
+    </h:body>
+</f:view>
+</html>

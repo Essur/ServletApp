@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+        <title>Tabulation</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>Tabulation</h2>
+            <p:panelGrid columns="2">
+                <p:outputLabel for="a" value="Enter a:" />
+                <p:inputText id="a" value="#{tabulationBean.a}" />
+
+                <p:outputLabel for="b" value="Enter b:" />
+                <p:inputText id="b" value="#{tabulationBean.b}" />
+
+                <p:outputLabel for="h" value="Enter step size (h):" />
+                <p:inputText id="h" value="#{tabulationBean.h}" />
+            </p:panelGrid>
+            <p:commandButton value="Tabulate" action="tabulate" ajax="false"/>
+            <br/>
+            <p:commandLink value="Go to Series Page" action="series.xhtml"/>
+        </h:form>
+    </h:body>
+</f:view>
+</html>
