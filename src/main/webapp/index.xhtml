@@ -22,10 +22,23 @@
                 <p:outputLabel for="e" value="Enter epsilon (e):" />
                 <p:inputText id="e" value="#{seriesBean.e}" />
             </p:panelGrid>
-            <p:commandButton value="Calculate Series" action="series-servlet" ajax="false"/>
+
+            <p:commandButton value="Calculate Series" action="#{seriesBean.calculateSeries}" update="output" />
+
             <br/>
-            <p:commandLink value="Go to Tabulation Page" action="tabulation.xhtml"/>
+            <p:commandLink value="Go to Tabulation Page" action="/tabulation.xhtml"/>
         </h:form>
+
+        <h:panelGroup id="output">
+            <p:outputLabel value="Sum: #{seriesBean.sum}" rendered="#{not empty seriesBean.sum}" />
+            <br/>
+
+            <p:outputLabel value="Limited Sum: #{seriesBean.limitedSum}" rendered="#{not empty seriesBean.limitedSum}" />
+            <br/>
+
+            <p:outputLabel value="Exact Value: #{seriesBean.exactValue}" rendered="#{not empty seriesBean.exactValue}" />
+        </h:panelGroup>
+
     </h:body>
 </f:view>
 </html>
